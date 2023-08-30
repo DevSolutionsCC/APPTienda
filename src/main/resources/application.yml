@@ -1,0 +1,33 @@
+spring:
+  thymeleaf.cache: false
+  thymeleaf.reactive.max-chunk-size: 8192  # Tamaño máximo de fragmento para Thymeleaf reactivo.
+
+  datasource:
+    url: jdbc:h2:file:./data/mydb;DB_CLOSE_ON_EXIT=FALSE  # URL de la base de datos H2 en un archivo en la carpeta "data".
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    hikari:
+      connection-timeout: 20000  # Tiempo máximo para establecer una conexión.
+      minimum-idle: 10  # Número mínimo de conexiones inactivas en el pool.
+      maximum-pool-size: 10  # Tamaño máximo del pool de conexiones.
+      auto-commit: true  # Las conexiones auto-commitearán las transacciones.
+
+  jpa:
+    show-sql: true  # Muestra las consultas SQL en la consola.
+    format_sql: true  # Formatea las consultas SQL para una mejor legibilidad.
+    hibernate: #facilita el uso de la bbdd
+      ddl-auto: update  # Actualiza automáticamente el esquema de la base de datos.
+    database-platform: org.hibernate.dialect.H2Dialect  # Plataforma de la base de datos H2.
+
+  h2:
+    console:
+      enabled: true  # Habilita la consola H2.
+      path: /h2-console  # Ruta para acceder a la consola H2.
+      settings.trace: false  # No muestra trazas detalladas.
+      settings.web-allow-others: false  # Restringe el acceso a la consola desde otros hosts.
+
+  sql:
+    init:
+      mode: always  # Siempre ejecuta los scripts de inicialización SQL.
+      continue-on-error: true  # Continúa ejecutando scripts incluso si hay errores.
