@@ -16,8 +16,7 @@ public class AuthoritiesService {
 	IDaoAuthorities dao;
 	
 	public List<DtoAuthorities> obtenerAhorities(){
-		return dao.obtenerAhorities();
-		
+		return dao.obtenerAhorities();		
 	}
 	
 }
