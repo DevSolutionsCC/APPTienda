@@ -20,7 +20,7 @@ public class DaoAuthorities implements IDaoAuthorities{
 	AuthorityRepository authorityRepository;
 
 	@Override
-	public List<DtoAuthorities> ontenerAhorities() {
+	public List<DtoAuthorities> obtenerAhorities() {
 		List<DtoAuthorities> retorno= new ArrayList<DtoAuthorities>();
 		for(Authorities ahtorities :authorityRepository.findAll())
 			retorno.add(new DtoAuthorities(ahtorities.getId(), ahtorities.getAuthority(),

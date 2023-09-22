@@ -8,6 +8,6 @@ import com.app.tienda.dao.dto.DtoAuthorities;
 
 public interface IDaoAuthorities {
 	
-	public List<DtoAuthorities> ontenerAhorities();
+	public List<DtoAuthorities> obtenerAhorities();
 
 }
