@@ -1,19 +1,16 @@
-package com.app.tienda.entity;
+package com.app.tienda.dao.entity;
+
 import java.io.Serializable;
 import javax.persistence.*;
-
 @Entity
-@Table(name = "empleados")
-public class Empleado implements Serializable {
+@Table(name = "categorias_productos")
+public class CategoriaProducto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column (nullable =  false, unique = true)
     private String nombre;
-
-    @Column(nullable = false)
-    private String puesto;
 
 	public Long getId() {
 		return id;
@@ -29,14 +26,6 @@ public class Empleado implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getPuesto() {
-		return puesto;
-	}
-
-	public void setPuesto(String puesto) {
-		this.puesto = puesto;
 	}
 
     

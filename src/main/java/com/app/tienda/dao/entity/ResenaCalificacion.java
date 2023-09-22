@@ -1,4 +1,4 @@
-package com.app.tienda.entity;
+package com.app.tienda.dao.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 

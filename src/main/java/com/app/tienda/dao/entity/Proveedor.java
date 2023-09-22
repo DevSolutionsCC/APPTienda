@@ -1,19 +1,16 @@
-package com.app.tienda.entity;
+package com.app.tienda.dao.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "clientes")
-public class Cliente implements Serializable {
+@Table(name = "proveedores")
+public class Proveedor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String nombre;
-
-    @Column(nullable = false)
-    private String direccion;
 
     @Column(nullable = false)
     private String informacionContacto;
@@ -32,14 +29,6 @@ public class Cliente implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
 	}
 
 	public String getInformacionContacto() {

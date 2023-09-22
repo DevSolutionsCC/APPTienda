@@ -1,24 +1,20 @@
-package com.app.tienda.entity;
+package com.app.tienda.dao.dto;
 
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "authorities")
-public class Authorities  implements Serializable{
-
+public class DtoAuthorities implements Serializable{
+ 
     /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
-    
-    @Id
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     
@@ -46,15 +42,16 @@ public class Authorities  implements Serializable{
     public void setId(Long id) {
         this.id = id;
     }
+	public DtoAuthorities(Long id, String authority, String username) {
+		super();
+		this.id = id;
+		this.authority = authority;
+		this.username = username;
+	}
     
-    public Authorities(String authority, String username) {
-        super();
-        this.authority = authority;
-        this.username = username;
-    }
-    
-    public Authorities() {
-        super();
-    }
+	public DtoAuthorities() {}
     
 }
+
+
+
